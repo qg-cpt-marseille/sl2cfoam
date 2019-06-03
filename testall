@@ -1,0 +1,36 @@
+#!/bin/bash
+echo
+echo ////// Running all tests... //////
+echo
+
+echo
+echo // 3 simplex
+bin/3simplex_test
+
+echo
+echo // 4 simplex
+bin/4simplex_test
+
+echo
+echo // BF amplitudes
+bin/bf_test
+
+echo
+echo // Booster b3 coefficients
+bin/b3_test
+
+echo
+echo // Booster b4 coefficients
+bin/b4_test
+
+echo
+echo // Coherent states
+bin/coherent_test
+
+echo
+echo // Recoupling symbols
+bin/recoupling_test
+
+echo
+echo ////// done! //////
+echo
