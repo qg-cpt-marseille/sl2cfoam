@@ -1,11 +1,11 @@
 /* Copyright 2019 Giorgio Sarno, Pietro Donà and Francesco Gozzini */
 
-/* EPRL is free software: you can redistribute it and/or modify
+/* sl2cfoam is free software: you can redistribute it and/or modify
    it under the terms of the GNU General Public License as published by
    the Free Software Foundation, either version 3 of the License, or
    (at your option) any later version.
 
-   EPRL is distributed in the hope that it will be useful,
+   sl2cfoam is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
    GNU General Public License for more details.
@@ -19,6 +19,8 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
+
+/**********************************************************************/
 
 // Machine type for double-spins.
 typedef unsigned short dspin;
@@ -35,7 +37,7 @@ typedef float spin;
 #define SL2CFOAM_COUPLING_IRREDUCIBLE 1
 
 // Verbosity levels.
-#define SL2CFOAM_VERBOSE_OFF   1
+#define SL2CFOAM_VERBOSE_OFF   0
 #define SL2CFOAM_VERBOSE_LOW   1
 #define SL2CFOAM_VERBOSE_HIGH  2
 
@@ -141,7 +143,6 @@ double sl2cfoam_four_ampl_get_BF(dspin two_js[10],
 // THREE-simplex functions.
 ///////////////////////////////////////////////////////////////////////////
 
-// Computes the vertex amplitude of a three simplex.
 double sl2cfoam_three_simplex( dspin two_j1, dspin two_j2, dspin two_j3, 
                                dspin two_j4, dspin two_j5, dspin two_j6,
                                dspin two_Dl, float Immirzi);
@@ -154,17 +155,22 @@ void sl2cfoam_hash_three_ampl(dspin two_j1_min, dspin two_j1_max,
                               dspin two_j6_min, dspin two_j6_max,                                                                                                        
                               dspin two_Dl, float Immirzi);
                               
-void sl2cfoam_hashall_three_ampl( dspin two_minj, dspin two_maxj,
-                                  dspin two_Dl, float Immirzi); 
+void sl2cfoam_hashall_three_ampl(dspin two_minj, dspin two_maxj,
+                                 dspin two_Dl, float Immirzi); 
 
 void sl2cfoam_three_ampl_load(dspin two_j1, dspin two_j2, dspin two_j3,
                               dspin two_Dl, float Immirzi);        
 
 void sl2cfoam_three_ampl_unload();  
 
-double sl2cfoam_three_ampl_get( dspin two_j1, dspin two_j2, dspin two_j3,
-                                dspin two_j4, dspin two_j5, dspin two_j6,
-                                dspin two_Dl, float Immirzi);
+double sl2cfoam_three_ampl_get(dspin two_j1, dspin two_j2, dspin two_j3,
+                               dspin two_j4, dspin two_j5, dspin two_j6,
+                               dspin two_Dl, float Immirzi);
 
+/**********************************************************************/
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif/*__SL2CFOAM_LIB_H__*/

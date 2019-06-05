@@ -59,8 +59,8 @@ typedef __uint32_t uint32_t;
 // By convention, all spin arguments to functions are
 // (positive) integers of the form 2 * spin.
 // Nomenclature is as follows: a dspin variable that starts
-// with 't' means that the variable holds 2 * spin value.
-// Example: j == 0.5, tj == 1.
+// with 'two_' means that the variable holds 2 * spin value.
+// Example: j == 0.5, two_j == 1.
 ///////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////
